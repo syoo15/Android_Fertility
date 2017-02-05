@@ -17,6 +17,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.IOException;
@@ -34,6 +35,7 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
     Set<BluetoothDevice> devicesArray;
     ArrayList<String> pairedDevices;
     ArrayList<BluetoothDevice> devices;
+    TextView statusText;
     public static final UUID MY_UUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB");
     protected static final int SUCCESS_CONNECT = 0;
     protected static final int MESSAGE_READ = 1;
@@ -50,7 +52,7 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
                 case SUCCESS_CONNECT:
                     // DO something
                     ConnectedThread connectedThread = new ConnectedThread((BluetoothSocket)msg.obj);
-                    Toast.makeText(getApplicationContext(), "CONNECT", 0).show();
+                    Toast.makeText(getApplicationContext(), "CONNECT", Toast.LENGTH_SHORT).show();
                     String s = "successfully connected";
                     connectedThread.write(s.getBytes());
                     Log.i(tag, "connected");
@@ -58,7 +60,7 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
                 case MESSAGE_READ:
                     byte[] readBuf = (byte[])msg.obj;
                     String string = new String(readBuf);
-                    Toast.makeText(getApplicationContext(), string, 0).show();
+                    Toast.makeText(getApplicationContext(), string, Toast.LENGTH_SHORT).show();
                     break;
             }
         }
@@ -69,12 +71,13 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
         setContentView(R.layout.activity_main);
         init();
         if(btAdapter==null){
-            Toast.makeText(getApplicationContext(), "No bluetooth detected", 0).show();
+            Toast.makeText(getApplicationContext(), "No bluetooth detected", Toast.LENGTH_SHORT).show();
             finish();
         }
         else{
             if(!btAdapter.isEnabled()){
                 turnOnBT();
+                statusText.setText("Bluetooth is ON");
             }
 
             getPairedDevices();
@@ -108,6 +111,7 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
         // TODO Auto-generated method stub
         listView=(ListView)findViewById(R.id.listView);
         listView.setOnItemClickListener(this);
+        statusText = (TextView)findViewById(R.id.txt_result);
         listAdapter= new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,0);
         listView.setAdapter(listAdapter);
         btAdapter = BluetoothAdapter.getDefaultAdapter();
@@ -194,7 +198,7 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
             Log.i(tag, "in click listener");
         }
         else{
-            Toast.makeText(getApplicationContext(), "device is not paired", 0).show();
+            Toast.makeText(getApplicationContext(), "device is not paired", Toast.LENGTH_SHORT).show();
         }
     }
 
