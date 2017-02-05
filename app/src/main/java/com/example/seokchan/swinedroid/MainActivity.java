@@ -12,6 +12,7 @@ import android.content.IntentFilter;
 import android.os.Handler;
 import android.os.Message;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -29,6 +30,7 @@ import java.util.UUID;
 
 public class MainActivity extends Activity implements AdapterView.OnItemClickListener {
 
+    private Toolbar toolbar;
     ArrayAdapter<String> listAdapter;
     ListView listView;
     BluetoothAdapter btAdapter;

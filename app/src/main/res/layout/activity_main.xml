@@ -24,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAllCaps="false"
-        android:background="#13C8AB"
+        android:background="#C2B8B2"
         android:padding="16dp"
         android:text="Connect to Bluetooth"
         android:layout_marginTop="43dp"
