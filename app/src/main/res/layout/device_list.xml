@@ -27,16 +27,13 @@
         android:paddingLeft="5dp"
         android:textSize="20sp"
         android:textColor="#F6F4F3"
-        android:text="@string/paired_devices"
-        android:visibility="gone"
-        />
+        android:text="@string/paired_devices" />
 
     <ListView
         android:id="@+id/paired_devices"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:stackFromBottom="true"
+        android:layout_height="0dp"
+        android:layout_weight="0.3"
         />
 
     <TextView
@@ -48,20 +45,13 @@
         android:paddingLeft="5dp"
         android:textSize="20sp"
         android:text="@string/new_devices"
-        android:visibility="gone"
         />
 
     <ListView
         android:id="@+id/new_devices"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="2"
-        android:stackFromBottom="true"
+        android:layout_height="0dp"
+        android:layout_weight="0.7"
         />
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/new_btn"
-        android:text="Graph"/>
 
 </LinearLayout>

@@ -1,6 +1,7 @@
 package com.example.seokchan.swinedroid;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.DashPathEffect;
 import android.graphics.Typeface;
@@ -45,6 +46,17 @@ public class SensorMain extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sensor_screen);
+    }
+
+
+    // Backpress button go back to the start page.
+    @Override
+    public void onBackPressed()
+    {
+        super.onBackPressed();
+        startActivity(new Intent(SensorMain.this, MainActivity.class));
+        finish();
+
     }
 
 }

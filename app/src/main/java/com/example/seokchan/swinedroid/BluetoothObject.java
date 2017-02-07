@@ -5,4 +5,5 @@ package com.example.seokchan.swinedroid;
  */
 
 public class BluetoothObject {
+    public int icon;
 }
