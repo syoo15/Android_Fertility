@@ -189,9 +189,10 @@ public class DeviceListActivity extends Activity {
                 // Get RSSI and paste it
                 int  rssi = intent.getShortExtra(BluetoothDevice.EXTRA_RSSI,Short.MIN_VALUE);
                 // If it's already paired, skip it, because it's been listed already
-                if (device.getBondState() != BluetoothDevice.BOND_BONDED) {
+                if (device.getBondState() == BluetoothDevice.BOND_BONDED) {
                     mNewDevicesArrayAdapter.clear();
                     mNewDevicesArrayAdapter.add(device.getName() + "\n" + device.getAddress() + "\n" + rssi + "dBm");
+                    //mNewDevicesArrayAdapter.notifyDataSetChanged();
                 }
                 // When discovery is finished, change the Activity title
             } else if (BluetoothAdapter.ACTION_DISCOVERY_FINISHED.equals(action)) {

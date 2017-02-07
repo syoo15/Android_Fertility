@@ -21,10 +21,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".DeviceListActivity"
+        <activity android:name=".ListActivity"
             android:label="Scanned BTDevices List">
             <intent-filter>
-                <action android:name=".DeviceListActivity" />
+                <action android:name=".ListActivity" />
                 <category android:name="android.intent.categry.DEFAULT" />
             </intent-filter>
         </activity>
