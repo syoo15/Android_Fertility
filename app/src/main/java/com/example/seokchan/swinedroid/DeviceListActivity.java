@@ -183,20 +183,26 @@ public class DeviceListActivity extends Activity {
 
             // When discovery finds a device
             if (BluetoothDevice.ACTION_FOUND.equals(action)) {
+                Log.d("wawa", "Device Found");
                 // Get the BluetoothDevice object from the Intent
                 BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
                 // Get RSSI and paste it
                 int  rssi = intent.getShortExtra(BluetoothDevice.EXTRA_RSSI,Short.MIN_VALUE);
                 // If it's already paired, skip it, because it's been listed already
                 if (device.getBondState() != BluetoothDevice.BOND_BONDED) {
+                    mNewDevicesArrayAdapter.clear();
                     mNewDevicesArrayAdapter.add(device.getName() + "\n" + device.getAddress() + "\n" + rssi + "dBm");
                 }
                 // When discovery is finished, change the Activity title
             } else if (BluetoothAdapter.ACTION_DISCOVERY_FINISHED.equals(action)) {
                 if (mNewDevicesArrayAdapter.getCount() == 0) {
+                    Log.d("wawa", "Not Found");
                     String noDevices = getResources().getText(R.string.none_found).toString();
                     mNewDevicesArrayAdapter.add(noDevices);
                 }
+                Log.d("wawa", "New Scan");
+                // Update discovery result every 12 seconds.
+                BTadapter.startDiscovery();
             }
         }
     };

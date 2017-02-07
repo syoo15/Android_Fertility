@@ -24,6 +24,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -40,6 +41,7 @@ public class MainActivity extends Activity {
     // Button declaration
     private Button btn_scan;
     private TextView status_txt;
+    private String TAG;
 
     // Bluetooth related declaration
     //private String BT_TAG;
@@ -56,17 +58,6 @@ public class MainActivity extends Activity {
         BTadapter =BluetoothAdapter.getDefaultAdapter();
         status_txt = (TextView)findViewById(R.id.txt_result);
 
-        // Check BT Compatibility
-        if(BTadapter==null){
-            Toast.makeText(getApplicationContext(), "No bluetooth detected", Toast.LENGTH_SHORT).show();
-            finish();
-        }
-        else{
-            if(!BTadapter.isEnabled()){
-                Toast.makeText(getApplicationContext(), "Your Bluetooth is OFF", Toast.LENGTH_SHORT).show();
-                turnOnBT();
-            }
-        }
         btn_scan = (Button)findViewById(R.id.btn_scan);
         btn_scan.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -74,8 +65,6 @@ public class MainActivity extends Activity {
                             scanForBTdevice();
             }
         });
-        IntentFilter filter = new IntentFilter(BluetoothAdapter.ACTION_STATE_CHANGED);
-        registerReceiver(mReceiver, filter);
 
     } // End of onCreate
 
@@ -119,6 +108,9 @@ public class MainActivity extends Activity {
                         status_txt.setText("ON");
                         status_txt.setTextColor(Color.parseColor("#5EEB5B"));
                         break;
+                    case BluetoothAdapter.STATE_OFF:
+                        status_txt.setText("OFF");
+                        status_txt.setTextColor(Color.parseColor("#B9314F"));
                 }
             }
         }
@@ -134,6 +126,31 @@ public class MainActivity extends Activity {
     @Override
     public void onPause(){
         super.onPause();
+
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+        Log.d("wawa","onResume()");
+        if(BTadapter==null){
+            Toast.makeText(getApplicationContext(), "No bluetooth detected", Toast.LENGTH_SHORT).show();
+            finish();
+        }
+        else{
+            if(!BTadapter.isEnabled()){
+                Log.d("wawa","not on");
+                Toast.makeText(getApplicationContext(), "Your Bluetooth is OFF", Toast.LENGTH_SHORT).show();
+                turnOnBT();
+            }
+            else if(BTadapter.isEnabled()){
+                Log.d("wawa","enabled");
+                status_txt.setText("ON");
+                status_txt.setTextColor(Color.parseColor("#5EEB5B"));
+            }
+        }
+        IntentFilter filter = new IntentFilter(BluetoothAdapter.ACTION_STATE_CHANGED);
+        registerReceiver(mReceiver, filter);
 
     }
 
