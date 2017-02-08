@@ -1,6 +1,8 @@
 package com.example.seokchan.swinedroid;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.DashPathEffect;
@@ -48,15 +50,33 @@ public class SensorMain extends Activity {
         setContentView(R.layout.sensor_screen);
     }
 
-
     // Backpress button go back to the start page.
     @Override
     public void onBackPressed()
     {
-        super.onBackPressed();
-        startActivity(new Intent(SensorMain.this, MainActivity.class));
-        finish();
-
+        AlertDialog diaBox = AskOption();
+        diaBox.show();
     }
 
+    private AlertDialog AskOption()
+    {
+        AlertDialog myQuittingDialogBox =new AlertDialog.Builder(this)
+                .setTitle("Exit")
+                .setMessage("Are you sure you want to exit?")
+
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        startActivity(new Intent(SensorMain.this, MainActivity.class));
+                        finish();
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                })
+                .create();
+        return myQuittingDialogBox;
+
+    }
 }

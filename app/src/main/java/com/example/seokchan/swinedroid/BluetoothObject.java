@@ -5,5 +5,20 @@ package com.example.seokchan.swinedroid;
  */
 
 public class BluetoothObject {
-    public int icon;
+    private String name;
+    private String address;
+    private String rssi;
+
+
+    public BluetoothObject(String name, String address, String rssi) {
+        this.name = name;
+        this.address = address;
+        this.rssi = rssi;
+    }
+
+    // Getters
+    public String getName(){return name;}
+    public String getAddress(){return address;}
+    public String getRssi(){return rssi;}
+
 }
