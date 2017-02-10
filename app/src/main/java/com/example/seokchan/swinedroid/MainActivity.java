@@ -119,7 +119,7 @@ public class MainActivity extends Activity {
     // Scanning BT Device Intent to open up list view activity
     private void scanForBTdevice(){
         // Start this on a new listview activity without passing any data
-        Intent intent = new Intent(this, DeviceListActivity.class);
+        Intent intent = new Intent(this, DeviceListActivity2.class);
         startActivity(intent);
     }
 

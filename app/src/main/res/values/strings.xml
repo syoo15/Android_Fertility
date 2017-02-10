@@ -7,6 +7,9 @@
     <string name="new_devices">Available Devices</string>
     <string name="none_found">No Bluetooth devices are found </string>
     <string name="none_paired">No paired Bluetooth devices </string>
+    <string name="send">Send</string>
+    <string name="bt_not_enabled_leaving">Bluetooth Not Enabled</string>
+    <string name="not_connected">Not connected</string>
 
 
 </resources>
