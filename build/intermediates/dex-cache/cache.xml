@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="C:\Users\SeokChan\Desktop\android-BluetoothLeGatt-master\Application\build\intermediates\exploded-aar\com.android.support\support-compat\25.0.1\jars\libs\internal_impl-25.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="3af8cc51ef7088e56f132780da8c0bd858b6a6ad">
+        <dex dex="C:\Users\SeokChan\Desktop\android-BluetoothLeGatt-master\Application\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_0725c14f476963131d161e212ce274f78401373b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\SeokChan\Desktop\android-BluetoothLeGatt-master\Application\build\intermediates\exploded-aar\com.android.support\support-v4\25.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\SeokChan\Desktop\android-BluetoothLeGatt-master\Application\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-25.0.1_20658fcf832b293eff7bf49a71ee97387e0b1a73\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\SeokChan\Desktop\android-BluetoothLeGatt-master\Application\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="bc7e99e8d0fc279a05aa91378530f467ad62d443">
+        <dex dex="C:\Users\SeokChan\Desktop\android-BluetoothLeGatt-master\Application\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-25.0.1_152bf5a160af75e758d1b88298ba87ed3c2bb0b4\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\SeokChan\Desktop\android-BluetoothLeGatt-master\Application\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6a1479afe9f1b3645e1cd9a87318976893472818">
+        <dex dex="C:\Users\SeokChan\Desktop\android-BluetoothLeGatt-master\Application\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-25.0.1_7fc947f8b67ad0c7504bd0a238f075c6000568df\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\SeokChan\Desktop\android-BluetoothLeGatt-master\Application\build\intermediates\exploded-aar\com.android.support\cardview-v7\25.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="1108575c7dc7b7f5b378b3290ac90de81a9b8830">
+        <dex dex="C:\Users\SeokChan\Desktop\android-BluetoothLeGatt-master\Application\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-cardview-v7-25.0.1_af8b533cc6f0bfc10716be9de555ed42f04d1b7d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\SeokChan\Desktop\android-BluetoothLeGatt-master\Application\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b24e1c688744078e1fa833ffadf696794761bbe5">
+        <dex dex="C:\Users\SeokChan\Desktop\android-BluetoothLeGatt-master\Application\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-25.0.1_1d0b1eaff165a59f3270e7b2f155953d996db88d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\SeokChan\Desktop\android-BluetoothLeGatt-master\Application\build\intermediates\exploded-aar\com.android.support\support-fragment\25.0.1\jars\libs\internal_impl-25.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c0bd6ffb002a85b5e7cad29f8558d1cc59539679">
+        <dex dex="C:\Users\SeokChan\Desktop\android-BluetoothLeGatt-master\Application\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_28360b5e04ff9b4b9dbe3ec8ec19e41c8186573c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\SeokChan\Desktop\android-BluetoothLeGatt-master\Application\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7a5352cfd8d30dc6644385241b34584b2e45907">
+        <dex dex="C:\Users\SeokChan\Desktop\android-BluetoothLeGatt-master\Application\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_3f4ef3cd8f98e4524b4e6adc75bb357a8fbfe86c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\SeokChan\Desktop\android-BluetoothLeGatt-master\Application\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.0.1\jars\libs\internal_impl-25.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f83b00041ecfba705603fec40363416c7de69719">
+        <dex dex="C:\Users\SeokChan\Desktop\android-BluetoothLeGatt-master\Application\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_7ea56a063e8414780704476c3f24fd838b6c43a2\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\SeokChan\Desktop\android-BluetoothLeGatt-master\Application\build\intermediates\exploded-aar\com.android.support\support-v13\25.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="9abf11d546d9e0ee82da86df608ced7a961b76ac">
+        <dex dex="C:\Users\SeokChan\Desktop\android-BluetoothLeGatt-master\Application\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v13-25.0.1_a424ada4abd02d7c2c39e6e3982a87151e1e9b04\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\SeokChan\Desktop\android-BluetoothLeGatt-master\Application\build\intermediates\exploded-aar\com.android.support\support-v13\25.0.1\jars\libs\internal_impl-25.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="cfb91ea7c6890336890ccb42767041af6b863e32">
+        <dex dex="C:\Users\SeokChan\Desktop\android-BluetoothLeGatt-master\Application\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_4d52728ea3d6069c1d634b9c1f668d5fbe3e4efa\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\SeokChan\Desktop\android-BluetoothLeGatt-master\Application\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.0.1\jars\libs\internal_impl-25.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
+        <dex dex="C:\Users\SeokChan\Desktop\android-BluetoothLeGatt-master\Application\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_215eec5bdc5bc8e165b4be0288e8da2446886247\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\SeokChan\Desktop\android-BluetoothLeGatt-master\Application\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="772bed2d992b67b9d0327f766cc95cd63031dcd3">
+        <dex dex="C:\Users\SeokChan\Desktop\android-BluetoothLeGatt-master\Application\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-25.0.1_ce6dfdf539b47f7f79b2e6b215073518cd082fd6\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\SeokChan\Desktop\android-BluetoothLeGatt-master\Application\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="00d4c8eebf2b681073c72a26bd0849549e51c7cb">
+        <dex dex="C:\Users\SeokChan\Desktop\android-BluetoothLeGatt-master\Application\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-25.0.1_b5d32101089467f831efc31be01700314310748d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\SeokChan\Desktop\android-BluetoothLeGatt-master\Application\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="5245dd07ec79e45ad8276327c9cb91ecd1f6ba81">
+        <dex dex="C:\Users\SeokChan\Desktop\android-BluetoothLeGatt-master\Application\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_91d400135b3a4b7a1800b8afd5bb0f8c3e5a2036\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\SeokChan\Desktop\android-BluetoothLeGatt-master\Application\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.0.1\jars\libs\internal_impl-25.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c5b7145fb34779b6639147b8f2f8dd77c0db771b">
+        <dex dex="C:\Users\SeokChan\Desktop\android-BluetoothLeGatt-master\Application\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-25.0.1_89a51d65aa0a169ffd2f44955de2cbf6d868e3be\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\SeokChan\Desktop\android-BluetoothLeGatt-master\Application\build\intermediates\exploded-aar\com.android.support\support-compat\25.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="51eba4a4dd73044f90a9d58dd7ca34adbebfcf4e">
+        <dex dex="C:\Users\SeokChan\Desktop\android-BluetoothLeGatt-master\Application\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-25.0.1_2ae1c7b85a454470bc14034e55b9287cbb0a6997\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\SeokChan\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.0.1\support-annotations-25.0.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="a09194311f8f89c3e6db09d79f50897a889d615e">
+        <dex dex="C:\Users\SeokChan\Desktop\android-BluetoothLeGatt-master\Application\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.0.1_c09388c29829a6b11e335fa1bc5f3cb96b710a0d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\SeokChan\Desktop\android-BluetoothLeGatt-master\Application\build\intermediates\exploded-aar\com.android.support\support-fragment\25.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="26c6eef571592c91f29e56fda0bac73321de0c92">
+        <dex dex="C:\Users\SeokChan\Desktop\android-BluetoothLeGatt-master\Application\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-25.0.1_e0c5e3b2f8142575295818aa7b0641825d97f25d\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\SeokChan\Desktop\android-BluetoothLeGatt-master\Application\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.0.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f7ac4b327fdb9e2ee386f5adc46164927658de4b">
+        <dex dex="C:\Users\SeokChan\Desktop\android-BluetoothLeGatt-master\Application\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-25.0.1_a3b9adff5fd63fa57769756063a80486b0928de2\classes.dex" />
+    </item>
+
+</items>
