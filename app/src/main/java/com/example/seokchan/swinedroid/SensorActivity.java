@@ -30,8 +30,14 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.FileOutputStream;
+import java.io.OutputStreamWriter;
 import java.io.UnsupportedEncodingException;
 import java.text.DateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 
 public class SensorActivity extends Activity {
@@ -57,6 +63,9 @@ public class SensorActivity extends Activity {
     private String mDeviceName;
     private String mDeviceAddress;
 
+    // Create string array to save data received and save that received data into csv file
+    private ArrayList<String> saved_data = new ArrayList<String>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,17 +82,17 @@ public class SensorActivity extends Activity {
         listAdapter = new ArrayAdapter<String>(this, R.layout.message);
         messageListView.setAdapter(listAdapter);
         messageListView.setDivider(null);
-        btnSend=(Button) findViewById(R.id.sendButton);
-        btnClear=(Button) findViewById(R.id.onclick_clear);
-        btnShare=(Button) findViewById(R.id.onclick_share);
-        btnMeasure=(Button) findViewById(R.id.onclick_measure);
+        btnSend = (Button) findViewById(R.id.sendButton);
+        btnClear = (Button) findViewById(R.id.onclick_clear);
+        btnShare = (Button) findViewById(R.id.onclick_share);
+        btnMeasure = (Button) findViewById(R.id.onclick_measure);
         edtMessage = (EditText) findViewById(R.id.sendText);
         service_init();
         init_UI();
         Log.d(TAG, "Oncreate Finished");
     }
 
-    private void init_UI(){
+    private void init_UI() {
 
         // Handler Send button
         btnSend.setOnClickListener(new View.OnClickListener() {
@@ -98,7 +107,7 @@ public class SensorActivity extends Activity {
                     mService.writeRXCharacteristic(value);
                     //Update the log with time stamp
                     String currentDateTimeString = DateFormat.getTimeInstance().format(new Date());
-                    listAdapter.add("["+currentDateTimeString+"] TX: "+ message);
+                    listAdapter.add("[" + currentDateTimeString + "] TX: " + message);
                     messageListView.smoothScrollToPosition(listAdapter.getCount() - 1);
                     edtMessage.setText("");
                 } catch (UnsupportedEncodingException e) {
@@ -111,17 +120,14 @@ public class SensorActivity extends Activity {
 
         // Clear the message list (This feature should be removed when graph is added.)
         // Not working properly....
-
-        /*
         btnClear.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 showMessage("Text screen is cleared!");
-                messageListView.setAdapter(null);
+                listAdapter.clear();
+                listAdapter.notifyDataSetChanged();
             }
         });
-        */
-
 
         // Measure button that sends character "A" to the sensor...
         btnMeasure.setOnClickListener(new View.OnClickListener() {
@@ -135,7 +141,7 @@ public class SensorActivity extends Activity {
                     mService.writeRXCharacteristic(value);
                     //Update the log with time stamp
                     String currentDateTimeString = DateFormat.getTimeInstance().format(new Date());
-                    listAdapter.add("["+currentDateTimeString+"] TX: "+ msg);
+                    listAdapter.add("[" + currentDateTimeString + "] TX: " + msg);
                     messageListView.smoothScrollToPosition(listAdapter.getCount() - 1);
                     edtMessage.setText("");
                 } catch (UnsupportedEncodingException e) {
@@ -158,7 +164,7 @@ public class SensorActivity extends Activity {
                     mService.writeRXCharacteristic(value);
                     //Update the log with time stamp
                     String currentDateTimeString = DateFormat.getTimeInstance().format(new Date());
-                    listAdapter.add("["+currentDateTimeString+"] TX: "+ msg);
+                    listAdapter.add("[" + currentDateTimeString + "] TX: " + msg);
                     messageListView.smoothScrollToPosition(listAdapter.getCount() - 1);
                     edtMessage.setText("");
                 } catch (UnsupportedEncodingException e) {
@@ -179,7 +185,7 @@ public class SensorActivity extends Activity {
                 Log.e(TAG, "Unable to initialize Bluetooth");
                 finish();
             }
-            Log.d(TAG, "Connected to: "+ mDeviceAddress);
+            Log.d(TAG, "Connected to: " + mDeviceAddress);
             mService.connect(mDeviceAddress);
 
         }
@@ -214,7 +220,7 @@ public class SensorActivity extends Activity {
                         //btnConnectDisconnect.setText("Disconnect");
                         edtMessage.setEnabled(true);
                         btnSend.setEnabled(true);
-                       // ((TextView) findViewById(R.id.deviceName)).setText(mDevice.getName()+ " - ready");
+                        // ((TextView) findViewById(R.id.deviceName)).setText(mDevice.getName()+ " - ready");
                         //listAdapter.add("["+currentDateTimeString+"] Connected to: "+ mDevice.getName());
                         messageListView.smoothScrollToPosition(listAdapter.getCount() - 1);
                         mState = UART_PROFILE_CONNECTED;
@@ -254,8 +260,19 @@ public class SensorActivity extends Activity {
                         try {
                             String text = new String(txValue, "UTF-8");
                             String currentDateTimeString = DateFormat.getTimeInstance().format(new Date());
-                            listAdapter.add("["+currentDateTimeString+"] RX: "+text);
+
+                            // save received data into string array and logcat for debugging..
+                            //saved_data.add(text);
+                            //Log.d("wawa", text);
+
+                            listAdapter.add("[" + currentDateTimeString + "] RX: " + text);
                             messageListView.smoothScrollToPosition(listAdapter.getCount() - 1);
+
+                            /*
+                            if (text == "End") {
+                                //save_csv();
+                            }
+                            */
 
                         } catch (Exception e) {
                             Log.e(TAG, e.toString());
@@ -264,13 +281,12 @@ public class SensorActivity extends Activity {
                 });
             }
             //*********************//
-            if (action.equals(UartService.DEVICE_DOES_NOT_SUPPORT_UART)){
+            if (action.equals(UartService.DEVICE_DOES_NOT_SUPPORT_UART)) {
                 showMessage("Device doesn't support UART. Disconnecting");
                 mService.disconnect();
             }
         }
     };
-
 
 
     // Message Handler
@@ -285,6 +301,7 @@ public class SensorActivity extends Activity {
 
         LocalBroadcastManager.getInstance(this).registerReceiver(UARTStatusChangeReceiver, makeGattUpdateIntentFilter());
     }
+
     private static IntentFilter makeGattUpdateIntentFilter() {
         final IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction(UartService.ACTION_GATT_CONNECTED);
@@ -294,6 +311,7 @@ public class SensorActivity extends Activity {
         intentFilter.addAction(UartService.DEVICE_DOES_NOT_SUPPORT_UART);
         return intentFilter;
     }
+
     @Override
     public void onStart() {
         super.onStart();
@@ -311,7 +329,7 @@ public class SensorActivity extends Activity {
         }
         unbindService(mServiceConnection);
         mService.stopSelf();
-        mService= null;
+        mService = null;
 
     }
 
@@ -382,4 +400,22 @@ public class SensorActivity extends Activity {
                 break;
         }
     }
+
+
+    /*
+    public void save_csv() {
+        String currentDateTimeString = DateFormat.getTimeInstance().format(new Date());
+        String filename = "Measurement" + currentDateTimeString;
+
+        try {
+            JSONObject jsonObj = new JSONObject();
+            jsonObj.put("Data", saved_data);
+            return jsonObj.toString();
+        } catch (JSONException ex) {
+            ex.printStackTrace();
+        }
+        return null;
+
+    }
+    */
 }
